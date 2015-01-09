@@ -24,7 +24,7 @@ module.exports = yeoman.generators.Base.extend({
         type: 'confirm',
         name: 'npm',
         message: 'Would you like to skip install NPM dependencies?',
-        default: false
+        default: true
       }
     ];
 
@@ -49,10 +49,10 @@ module.exports = yeoman.generators.Base.extend({
         'app/images',
         'app/js',
         'app/js/vendor',
-        'app/js/build',
+        'app/js/src',
         'app/css',
-        'app/css/less',
-        'app/css/build',
+        'app/css/vendor',
+        'app/css/src',
       ];
 
       this.fs.copy(
