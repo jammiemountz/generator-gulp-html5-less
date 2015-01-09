@@ -16,7 +16,7 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
 
     this.log(yosay(
-      'Welcome to the marvelous [ HTML5-LESS ] generator!'
+      'Welcome to the marvelous [ html5-less ] generator!'
     ));
 
     var prompts = [
