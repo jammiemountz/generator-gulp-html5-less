@@ -5,13 +5,13 @@
 To install generator-html5less from npm, run:
 
 ```bash
-npm install -g generator-html5-less
+npm install -g generator-html5less
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo html5-less
+yo html5less
 ```
 
 To run Gulpjs type in terminal:

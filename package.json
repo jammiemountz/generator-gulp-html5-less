@@ -1,7 +1,7 @@
 {
-  "name": "generator-html5-less",
+  "name": "generator-html5less",
   "version": "0.1.0",
-  "description": "Yeoman Generator - html5-less with Gulpjs",
+  "description": "Yeoman Generator - html5less with Gulpjs",
   "license": "MIT",
   "main": "app/index.js",
   "author": {
