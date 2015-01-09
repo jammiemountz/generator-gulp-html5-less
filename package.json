@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "app/index.js",
   "author": {
-    "name": "pawel",
+    "name": "Pawel Stachula",
     "email": "pawel@stachula.pl",
     "url": "https://github.com/ald890"
   },
@@ -15,6 +15,10 @@
   "keywords": [
     "yeoman-generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ald890/generator-html5less"
+  }
   "dependencies": {
     "yeoman-generator": "^0.18.0",
     "yosay": "^1.0.1"
