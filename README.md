@@ -1,4 +1,4 @@
-## html5-less with Gulpjs Generator
+## html5less with Gulpjs Generator
 
 ### Getting Started
 
