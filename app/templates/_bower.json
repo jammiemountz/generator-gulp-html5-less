@@ -1,12 +1,11 @@
 {
-  "name": "Pawel-Bower-Workflow",
+  "name": "bower-workflow",
   "version": "1.0.0",
   "dependencies": {
     "jquery": "~1.10.0",
-    "handlebars": "~1.0.0",
-    "requirejs": "~2.1.8",
-    "respond": "~1.2.0",
-    "bootstrap": "~3.3.1"
+    "bootstrap": "~3.3.1",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.2"
   }
 }
 

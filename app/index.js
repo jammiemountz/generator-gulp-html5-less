@@ -1,34 +1,40 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
+  options: {
+    npm: false
+  },
+
   initializing: function () {
     this.pkg = require('../package.json');
   },
 
+  // Propting message to user
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the marvelous' + chalk.red('Html5less') + ' generator!'
+      'Welcome to the marvelous [ HTML5-LESS ] generator!'
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'npmInstall',
-      message: 'Would you like to skip install NPM?',
-      default: false
-    }];
+    var prompts = [
+      {
+        type: 'confirm',
+        name: 'npm',
+        message: 'Would you like to skip install NPM dependencies?',
+        default: false
+      }
+    ];
 
     this.prompt(prompts, function (props) {
-      this.npmInstall = props.npmInstall;
+      this.options.npm = props.npm;
       done();
     }.bind(this));
   },  
 
+  // Copy files and create directories
   writing: {
     app: function () {
       var paths = [
@@ -38,12 +44,15 @@ module.exports = yeoman.generators.Base.extend({
       ];
 
       var dirs = [
+        'app/icons',
         'app/fonts',
         'app/images',
         'app/js',
         'app/js/vendor',
-        'app/styles',
-        'app/styles/less',
+        'app/js/build',
+        'app/css',
+        'app/css/less',
+        'app/css/build',
       ];
 
       this.fs.copy(
@@ -64,10 +73,11 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
 
+  // Install all dependencies for npm and bower
   install: function () {
     this.installDependencies({
       bower: true,
-      npm: false
+      npm: this.options.npm
     });
   }
 });
