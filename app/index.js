@@ -40,7 +40,8 @@ module.exports = yeoman.generators.Base.extend({
       var paths = [
         "package.json",
         "bower.json",
-        "gulpfile.js"
+        "gulpfile.js",
+        ".gitignore"
       ];
 
       var dirs = [

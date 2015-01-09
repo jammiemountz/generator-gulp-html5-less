@@ -22,12 +22,12 @@ gulp
 ### Project Structure Preview
 
 ```bash
-/app/css/build
-/app/css/less
+/app/css/src
+/app/css/vendor
 /app/fonts
 /app/icons
 /app/images
-/app/js/build
+/app/js/src
 /app/js/vendor
 /app/index.html
 /bower/json
