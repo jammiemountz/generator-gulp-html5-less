@@ -22,17 +22,18 @@ gulp
 ### Project Structure Preview
 
 ```bash
-/app/css/src
-/app/css/vendor
-/app/fonts
-/app/icons
-/app/images
-/app/js/src
-/app/js/vendor
-/app/index.html
-/bower/json
-/gulpfile.js
-/package/json
+app/css/src
+app/css/vendor
+app/fonts
+app/icons
+app/images
+app/js/src
+app/js/vendor
+app/index.html
+.gitignore
+bower.json
+gulpfile.js
+package.json
 ```
 
 ## License
