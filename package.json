@@ -1,0 +1,23 @@
+{
+  "name": "generator-html5less",
+  "version": "0.1.0",
+  "description": "Yeoman html5 generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "author": {
+    "name": "pawel",
+    "email": "pawel@stachula.pl",
+    "url": "https://github.com/ald890"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
+  }
+}
