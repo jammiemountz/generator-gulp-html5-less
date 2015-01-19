@@ -30,6 +30,19 @@ var path = {
   js_vendor: 'app/js/vendor/**/.js'
 };
 
+var bower_path = {  
+  css: [
+    path.css_vendor,
+    "bower_components/bootstrap/dist/css/bootstrap.min.css"
+  ],
+  js: [
+    path.js_vendor,
+    "bower_components/html5shiv/dist/html5shiv-printshiv.min.js",
+    "bower_components/jquery/jquery.min.js",
+    "bower_components/respond/dest/respond.min.js"
+  ]
+};
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -39,7 +52,7 @@ var path = {
 */
 
 gulp.task('js_vendor', function() {
-  gulp.src(path.js_vendor)
+  gulp.src(bower_path.js)
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest(path.js_dest));
@@ -61,7 +74,7 @@ gulp.task('js_task', function() {
 */
 
 gulp.task('css_vendor', function() {
-  gulp.src(path.css_vendor)
+  gulp.src(bower_path.css)
     .pipe(less())
     .pipe(concat('vendor.min.css'))
     .pipe(autoprefixer())

@@ -1,7 +1,7 @@
 {
-  "name": "generator-html5less",
+  "name": "generator-gulp-html5-less",
   "version": "0.1.0",
-  "description": "Yeoman Generator - html5less with Gulpjs",
+  "description": "Yeoman Generator - Gulp HTML5 and LESS",
   "license": "MIT",
   "main": "app/index.js",
   "author": {
@@ -13,11 +13,14 @@
     "node": ">=0.10.0"
   },
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "less",
+    "gulp",
+    "html5"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ald890/generator-html5less"
+    "url": "https://github.com/ald890/generator-gulp-html5-less"
   },
   "dependencies": {
     "yeoman-generator": "^0.18.0",

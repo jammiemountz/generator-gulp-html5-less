@@ -1,22 +1,40 @@
-## html5less with Gulpjs Generator
+## gulp-html5-less with Gulpjs Generator
 
 ### Getting Started
 
-To install generator-html5less from npm, run:
+To install generator-gulp-html5-less from npm, run:
 
 ```bash
-npm install -g generator-html5less
+npm install -g generator-gulp-html5-less
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo html5less
+yo gulp-html5-less
 ```
 
 To run Gulpjs type in terminal:
 ```bash
 gulp
+```
+
+### If you want to add new dependencies
+
+####Install your library with *bower*
+Example: bower install angularjs
+
+####Then you can add path to *gulp.js*
+```javascript
+var bower_path = {  
+  css: [
+    path.css_vendor
+  ],
+  js: [
+    path.js_vendor,
+    *"bower_components/angular/angular.min.js"*
+  ]
+};
 ```
 
 ### Project Structure Preview

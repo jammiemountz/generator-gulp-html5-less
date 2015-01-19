@@ -11,12 +11,11 @@ module.exports = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
   },
 
-  // Propting message to user
   prompting: function () {
     var done = this.async();
 
     this.log(yosay(
-      'Welcome to the marvelous [ html5-less ] generator!'
+      'Welcome to the marvelous [ gulp-html5-less with gulp ] generator!'
     ));
 
     var prompts = [
@@ -34,7 +33,6 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },  
 
-  // Copy files and create directories
   writing: {
     app: function () {
       var paths = [
@@ -48,10 +46,8 @@ module.exports = yeoman.generators.Base.extend({
         'app/icons',
         'app/fonts',
         'app/images',
-        'app/js',
         'app/js/vendor',
         'app/js/src',
-        'app/css',
         'app/css/vendor',
         'app/css/src',
       ];
@@ -74,11 +70,10 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
 
-  // Install all dependencies for npm and bower
   install: function () {
     this.installDependencies({
       bower: true,
-      npm: this.options.npm
+      npm: !this.options.npm
     });
   }
 });
