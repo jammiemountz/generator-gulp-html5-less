@@ -1,6 +1,6 @@
-## gulp-html5-less with Gulpjs Generator
+# gulp-html5-less with Gulpjs Generator
 
-### Getting Started
+### Getting started
 
 To install generator-gulp-html5-less from npm, run:
 
@@ -19,18 +19,18 @@ To run Gulpjs type in terminal:
 gulp
 ```
 
-### Default library
-- boostrap
-- jquery
-- respond
-- html5shiv
+### Default frameworks and plugins
+- Bootstrap
+- jQuery
+- Respond
+- Html5shiv
 
 ### If you want to add new dependencies
 
-*Install your library with bower*
+**Install your library with bower**
 Example: bower install angularjs
 
-*Then you can add path to gulp.js*
+**Then you can add path to gulp.js**
 ```javascript
 var bower_path = {  
   css: [
@@ -43,7 +43,7 @@ var bower_path = {
 };
 ```
 
-### Project Structure Preview
+### Project structure preview
 
 ```bash
 app/css/src
