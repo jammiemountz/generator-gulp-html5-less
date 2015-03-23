@@ -1,8 +1,8 @@
 # gulp-html5-less with Gulpjs Generator
 
-Generator allows you to easily manage dependencies and compile and minimize all CSS and Javascript files. The generator can be easily linked to the Bower components but also with your vendors.
+Generator allows you to easily manage dependencies and compile and minimize all CSS and Javascript files. The generator can be easily linked to the Bower components.
 
-All dependencies are kept in a file gulpfile.js, we do not have to worry about loading the file of all html files. This improves page load performance by reducing the amount of files loaded css / js.
+All dependencies are kept in a file gulpfile.js, we do not have to worry about loading the vendor files. This improves page load performance by reducing the amount of files loaded css / js.
 
 ### Getting started
 
