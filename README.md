@@ -1,5 +1,9 @@
 # gulp-html5-less with Gulpjs Generator
 
+Generator allows you to easily manage dependencies and compile and minimize all CSS and Javascript files. The generator can be easily linked to the Bower components but also with your vendors.
+
+All dependencies are kept in a file gulpfile.js, we do not have to worry about loading the file of all html files. This improves page load performance by reducing the amount of files loaded css / js.
+
 ### Getting started
 
 To install generator-gulp-html5-less from npm, run:
@@ -22,8 +26,6 @@ gulp
 ### Default frameworks and plugins
 - Bootstrap
 - jQuery
-- Respond
-- Html5shiv
 
 ### If you want to add new dependencies
 
@@ -34,11 +36,11 @@ Example: bower install angularjs
 ```javascript
 var bower_path = {  
   css: [
-    path.css_vendor
+    "public/css/vendor/**/*.less",
   ],
   js: [
-    path.js_vendor,
-    "bower_components/angular/angular.min.js"
+    "public/js/vendor/**/*.less",
+    "bower_components/angular/angular.min.js",
   ]
 };
 ```

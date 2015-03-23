@@ -1,6 +1,7 @@
 'use strict';
+
 var yeoman = require('yeoman-generator');
-var yosay = require('yosay');
+var yosay  = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
   options: {
@@ -57,14 +58,14 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('app/index.html')
       );
 
-      for(var i=0; i < dirs.length; i++) {
+      for(var i = 0; i < dirs.length; i++) {
         this.mkdir(dirs[i]);
       }
 
-      for(var i=0; i < paths.length; i++) {
+      for(var j = 0; j < paths.length; j++) {
         this.fs.copy(
-          this.templatePath('_' + paths[i]),
-          this.destinationPath(paths[i])
+          this.templatePath('_' + paths[j]),
+          this.destinationPath(paths[j])
         );  
       }
     }

@@ -5,12 +5,12 @@
 |
 */
 
-var gulp = require('gulp'),
-    less = require('gulp-less'),
-    watch = require('gulp-watch'),
-    concat = require('gulp-concat')
-    uglify = require('gulp-uglify'),
-    minifyCSS = require('gulp-minify-css'),
+var gulp         = require('gulp'),
+    less         = require('gulp-less'),
+    watch        = require('gulp-watch'),
+    concat       = require('gulp-concat'),
+    uglify       = require('gulp-uglify'),
+    minifyCSS    = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer');
 
 
@@ -23,73 +23,68 @@ var gulp = require('gulp'),
 
 var path = {
   css_dest: 'app/css',
-  js_dest: 'app/js',
-  css_src: 'app/css/src/**/*.less',
-  css_vendor: 'app/css/vendor/**/*.less',
-  js_src: 'app/js/src/**/*.js',
-  js_vendor: 'app/js/vendor/**/.js'
+  js_dest:  'app/js',
+  css_src:  'app/css/src/**/*.less',
+  js_src:   'app/js/src/**/*.js'
 };
 
 var bower_path = {  
   css: [
-    path.css_vendor,
     "bower_components/bootstrap/dist/css/bootstrap.min.css"
   ],
   js: [
-    path.js_vendor,
-    "bower_components/html5shiv/dist/html5shiv-printshiv.min.js",
-    "bower_components/jquery/jquery.min.js",
-    "bower_components/respond/dest/respond.min.js"
+    "bower_components/jquery/jquery.min.js"
   ]
 };
 
 
 /*
 |-------------------------------------------------------------------------------
-| JS Tasks
+| Vendors
 |-------------------------------------------------------------------------------
 |
 */
 
 gulp.task('js_vendor', function() {
   gulp.src(bower_path.js)
-    .pipe(uglify())
     .pipe(concat('vendor.min.js'))
-    .pipe(gulp.dest(path.js_dest));
-});
-
-gulp.task('js_task', function() {
-  gulp.src(path.js_src)
     .pipe(uglify())
-    .pipe(concat('app.min.js'))
     .pipe(gulp.dest(path.js_dest));
 });
 
- 
+gulp.task('css_vendor', function() {
+  gulp.src(bower_path.css)
+    .pipe(concat('vendor.min.css'))
+    .pipe(less())
+    .pipe(autoprefixer())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(path.css_dest));
+});
+
+
 /*
 |-------------------------------------------------------------------------------
-| CSS Tasks
+| Main application
 |-------------------------------------------------------------------------------
 |
 */
 
-gulp.task('css_vendor', function() {
-  gulp.src(bower_path.css)
+gulp.task('js_task', function() {
+  gulp.src(path.js_src)
+    .pipe(concat('app.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(path.js_dest));
+});
+
+gulp.task('css_task', function() {
+  gulp.src(path.css_src)
+    .pipe(concat('styles.min.css'))
     .pipe(less())
-    .pipe(concat('vendor.min.css'))
     .pipe(autoprefixer())
     .pipe(minifyCSS())
     .pipe(gulp.dest(path.css_dest));
 });
 
-gulp.task('css_task', function() {
-  gulp.src(path.css_src)
-    .pipe(less())
-    .pipe(concat('styles.min.css'))
-    .pipe(autoprefixer())
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(path.css_dest));
-});
 
 /*
 |-------------------------------------------------------------------------------
@@ -98,8 +93,9 @@ gulp.task('css_task', function() {
 |
 */
 
-
 gulp.task('watch', function() {
+
+  // Bower JS and CSS files are performed once at start - performance reasons
   gulp.run('css_vendor');
   gulp.run('js_vendor');
 
